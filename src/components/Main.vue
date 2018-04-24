@@ -1,7 +1,7 @@
 <template>
   <Page ref="page" actionBarHidden="true" backgroundSpanUnderStatusBar="true">
     <StackLayout>
-      <header :action="addUsernameRepo" />
+      <header  @action="addUsernameRepo"/>
 
       <StackLayout v-if="repositories" class="selectedUsername" >
         <Label text="Limpar todos os repositórios" horizontalAlignment="center" @tap="clearAllData"/>
@@ -10,6 +10,7 @@
       <StackLayout class="container">
           <ActivityIndicator :busy="loading" v-if="loading"  horizontalAlignment="center" verticalAlignment="center" height="100%"/>
           <repositories-list v-if="repositories" :repositories="repositories" />
+
           <StackLayout v-else horizontalAlignment="center" verticalAlignment="center" height="100%">
             <Label textWrap="true" text="Selecione um usuário no botão acima, para listar os repositórios" class="noRepositoriesLabel"></Label>
           </StackLayout>
