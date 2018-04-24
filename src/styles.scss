@@ -1,0 +1,80 @@
+// NativeScript core theme
+// @see https://docs.nativescript.org/ui/theme
+//@import '~nativescript-theme-core/scss/skins/orange/index';
+//@import '~nativescript-theme-core/scss/index';
+Page {
+  background-color: #F3F3F3;
+  font-size: 20;
+  margin: 0;
+  padding: 0;
+}
+.fa {
+  font-family: FontAwesome;
+}
+.container {
+  background-color: #F3F3F3;
+}
+.card {
+  background-color: #ffffff;
+  border-radius: 3;
+  margin: 10;
+  padding: 20;
+}
+.card Image {
+  margin-right: 20;
+}
+Label {
+  color: #131426;
+}
+Span {
+  margin-right: 30;
+}
+.action-bar {
+  background-color: #01a0ec;
+  color: #131426;
+  font-weight: bold;
+  font-size: 20;
+  height: 70;
+}
+.header {
+  color: #fff;
+  font-size: 24;
+  padding-left: 7;
+}
+.header-icon {
+  padding-right: 7;
+  vertical-align: center;
+  color: #fff;
+  font-size: 24;
+}
+TextField {
+  padding: 10;
+  font-size: 13;
+}
+
+.selectedUsername{
+  background-color: #d4d3d3;
+  height: 30;
+  text-align: center;
+}
+.avatarRepository{
+  width: 70;
+  height: 70;
+  border-radius: 50%;
+}
+.footerRepository{
+  margin-top: 10;
+}
+.descriptionRepository{
+  font-size: small;
+  color: #9e9e9e;
+}
+.noRepositoriesLabel{
+  text-align: center;
+  padding: 0 50 0 50;
+}
+
+
+
+// Global SCSS styling
+// @see https://docs.nativescript.org/ui/styling
