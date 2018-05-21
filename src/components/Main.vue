@@ -9,6 +9,7 @@
 
       <StackLayout class="container">
           <ActivityIndicator :busy="loading" v-if="loading"  horizontalAlignment="center" verticalAlignment="center" height="100%"/>
+
           <repositories-list v-if="repositories" :repositories="repositories" />
 
           <StackLayout v-else horizontalAlignment="center" verticalAlignment="center" height="100%">
@@ -42,24 +43,27 @@
                 cancelButtonText: "Cancelar"
             })
             .then(result => {
-                if(result.result) {
-                    this.loading = true
-                    getAllRepositories(result.text)
-                        .then(response => {
-                            this.repositories = [...response.data]
-                            this.loading = false
-                        })
-                        .catch(err => {
-                            console.log(err.message)
-                            alert({
-                                title: "Usuário não encontrado",
-                                okButtonText: 'OK'
-                            })
-                            .then(() => {
-                                this.clearAllData()
-                            })
-                        })
+                if(!result.result) {
+                    return
                 }
+
+                this.loading = true
+                getAllRepositories(result.text)
+                    .then(response => {
+                        this.repositories = [...response.data]
+                        this.loading = false
+                    })
+                    .catch(err => {
+                        console.log(err.message)
+                        alert({
+                            title: "Usuário não encontrado",
+                            okButtonText: 'OK'
+                        })
+                        .then(() => {
+                            this.clearAllData()
+                        })
+                    })
+
             })
         },
         clearAllData() {
